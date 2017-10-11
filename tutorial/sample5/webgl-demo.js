@@ -1,13 +1,18 @@
-var cubeRotation = 0.0;
 
-main();
 
+(function(){
+ var cubeRotation = 0.0;
+ main();
 //
 // Start here
 //
 function main() {
   const canvas = document.querySelector('#glcanvas');
   const gl = canvas.getContext('webgl');
+  
+  var size = Math.min(window.innerWidth,window.innerHeight);
+  var w = gl.canvas.width = size;
+  var h = gl.canvas.height= size;
 
   // If we don't have a GL context, give up now
 
@@ -375,4 +380,7 @@ function loadShader(gl, type, source) {
 
   return shader;
 }
+
+	
+})();
 
